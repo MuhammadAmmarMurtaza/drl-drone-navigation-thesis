@@ -54,6 +54,7 @@ docs/       Thesis planning, research notes and progress tracking
 setup/      Environment setup and installation notes
 results/    Experiment logs, test summaries and observations
 diagrams/   Pipeline diagrams and architecture figures
+```
 
 ## Current Focus
 

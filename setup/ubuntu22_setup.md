@@ -36,6 +36,7 @@ Example structure:
 ├── ros2_ws/
 ├── realsense_ws/
 └── github_portfolio/
+```
 
 ## Environment Separation
 
