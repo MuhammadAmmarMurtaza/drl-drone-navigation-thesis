@@ -54,3 +54,9 @@ docs/       Thesis planning, research notes and progress tracking
 setup/      Environment setup and installation notes
 results/    Experiment logs, test summaries and observations
 diagrams/   Pipeline diagrams and architecture figures
+
+## Current Focus
+
+The current focus is to document the working Ubuntu 22.04 research environment and prepare the foundation for a modern Flightmare-to-Gymnasium DRL training pipeline.
+
+Flightmare is treated as the main thesis simulator. PyBullet is used for fast baseline testing. ROS 2 and Gazebo are used for robotics integration and deployment-style testing.

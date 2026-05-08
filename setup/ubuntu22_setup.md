@@ -37,7 +37,7 @@ Example structure:
 ├── realsense_ws/
 └── github_portfolio/
 
-Environment Separation
+## Environment Separation
 
 ROS 2 is kept at the system level.
 
@@ -45,7 +45,7 @@ RL libraries such as PyTorch, Stable-Baselines3, RLlib and Gymnasium are kept in
 
 This avoids conflicts between ROS 2 Python packages and modern RL packages.
 
-Current Status
+## Current Status
 Ubuntu 22.04 installed
 NVIDIA GPU available
 Python virtual environments used
