@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+rl_env/
+flightmare_env/
+
+# ROS 2
+build/
+install/
+log/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Model files
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# System / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
