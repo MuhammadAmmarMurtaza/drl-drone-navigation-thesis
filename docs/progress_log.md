@@ -1,32 +1,26 @@
-# Progress Log
-
-## Initial Setup
+## Profile and Thesis Repository Setup
 
 ### Completed
 
 - Created GitHub profile README repository
-- Created main thesis research repository
-- Set up native Ubuntu 22.04 research system
-- Installed ROS 2 Humble system-wide
-- Installed Gazebo Fortress
-- Configured Python RL environment
-- Tested Gymnasium / SB3 / RLlib direction
-- Tested PyBullet drone examples
-- Built Flightmare successfully
-- Verified Flightmare Python bindings
-- Verified Flightmare Unity renderer and bridge tests
+- Created public thesis research hub repository
+- Pinned profile README repository
+- Pinned thesis research repository
+- Added thesis pipeline documentation
+- Added Ubuntu 22.04 setup notes
+- Added RL environment setup notes
+- Added Flightmare setup notes
+- Added Flightmare interface test summary
+- Added PyBullet PID test summary
 
 ### Current Focus
 
-- Organize public research documentation
-- Prepare Flightmare modern Gymnasium wrapper
-- Document PyBullet baseline experiments
-- Document Flightmare setup and interface tests
+The current focus is to make the GitHub profile credible and focused for robotics and DRL-based drone navigation research.
 
 ### Next Tasks
 
-- Add Ubuntu 22.04 setup notes
-- Add RL environment setup notes
-- Add Flightmare setup notes
-- Add PyBullet PID test summary
-- Add thesis pipeline document
+- Create `flightmare-gymnasium-wrapper`
+- Add wrapper design documentation
+- Create initial Gymnasium environment skeleton
+- Add SB3 CartPole baseline result
+- Add PyBullet RL baseline plan
