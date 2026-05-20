@@ -103,3 +103,24 @@ Purpose:
 | Flightmare | Main thesis simulator |
 | ROS 2 + Gazebo | Robotics integration and deployment testing |
 | AirSim | Optional future comparison |
+
+## Completed Technical Milestone: Mode A Headless RL
+
+The first completed technical milestone is a reusable repository named:
+
+`flightmare-headless-rl-wrapper`
+
+This repository implements Mode A: headless reinforcement learning training using Flightmare's quadrotor backend without Unity rendering.
+
+Key achievements:
+
+- Flightmare buffer-based Python binding wrapped for modern RL use
+- Gymnasium-compatible single-environment wrapper created
+- SB3-compatible vectorized wrapper created
+- Scaled-action wrapper created
+- PPO training and evaluation completed in headless mode
+- 100 native Flightmare parallel environments used for vectorized RL
+- Action-scale ablation completed
+- Best current internal action range: ±0.5
+
+This establishes the first stable baseline for Flightmare-based DRL training in the thesis pipeline.
