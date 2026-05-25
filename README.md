@@ -16,7 +16,7 @@ Therefore, this project starts with simulation-based development and gradually m
 2. Test drone control baselines in PyBullet
 3. Use Flightmare as the main thesis simulator
 4. Build a modern Gymnasium-compatible Flightmare wrapper
-5. Train policies using Stable-Baselines3, RLlib, and PyTorch
+5. Train policies using Stable-Baselines3, RLlib and PyTorch
 6. Integrate policy inference with ROS 2
 7. Test RealSense-based perception
 8. Move toward Jetson Orin Nano deployment
@@ -61,3 +61,50 @@ diagrams/   Pipeline diagrams and architecture figures
 The current focus is to document the working Ubuntu 22.04 research environment and prepare the foundation for a modern Flightmare-to-Gymnasium DRL training pipeline.
 
 Flightmare is treated as the main thesis simulator. PyBullet is used for fast baseline testing. ROS 2 and Gazebo are used for robotics integration and deployment-style testing.
+
+## Thesis Repository Ecosystem
+
+This thesis pipeline is organized into separate repositories to keep training, visualization and documentation modular.
+
+| Repository | Role |
+|---|---|
+| `drl-drone-navigation-thesis` | Main thesis hub, research pipeline, setup notes, progress tracking |
+| `flightmare-headless-rl-wrapper` | Mode A: headless Flightmare RL training using Gymnasium/SB3/PyTorch |
+| `flightmare_racing_visualization` | Mode B: Flightmare Unity visualization, YAML racing tracks, camera capture and gate-passing logs |
+
+### Mode A: Headless RL Training
+
+Mode A focuses on fast reinforcement learning training without Unity rendering.
+
+Repository:
+
+`flightmare-headless-rl-wrapper`
+
+Main features:
+
+- Flightmare buffer-based wrapper
+- Gymnasium-compatible single environment
+- SB3-compatible VecEnv wrapper
+- Scaled-action wrapper
+- PPO headless training and evaluation
+- Action-scale ablation
+
+### Mode B: Unity Racing Visualization
+
+Mode B focuses on Flightmare UnityBridge visualization and racing-track tooling.
+
+Repository:
+
+`flightmare_racing_visualization`
+
+Main features:
+
+- YAML-driven racing tracks
+- Scene selection
+- Local-origin scene calibration
+- Onboard camera capture
+- Gate-passing detection
+- CSV logging
+- UZH/RPG-inspired configurable track templates
+
+Mode A and Mode B are intentionally separated. Mode A is used for training and evaluation, while Mode B is used for visualization, track tooling and future trained-policy demonstrations.
