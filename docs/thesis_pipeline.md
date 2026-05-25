@@ -124,3 +124,70 @@ Key achievements:
 - Best current internal action range: ±0.5
 
 This establishes the first stable baseline for Flightmare-based DRL training in the thesis pipeline.
+
+## Mode B: Flightmare Unity Racing Visualization
+
+Mode B focuses on Unity-based visualization and racing-track tooling for the Flightmare thesis pipeline.
+
+The dedicated repository is:
+
+`flightmare_racing_visualization`
+
+### Purpose
+
+This repository provides configurable Flightmare UnityBridge tools for:
+
+- Quadrotor racing visualization
+- YAML-driven racing tracks
+- Scene selection
+- Local-origin scene calibration
+- Onboard camera capture
+- UZH/RPG-inspired track templates
+- Gate-passing detection
+- CSV logging
+
+### Relationship to Mode A
+
+Mode A headless RL training is handled separately in:
+
+`flightmare-headless-rl-wrapper`
+
+Mode B visualization and racing-track tooling is handled in:
+
+`flightmare_racing_visualization`
+
+This creates a clean separation:
+
+| Mode | Repository | Purpose |
+|---|---|---|
+| Mode A | `flightmare-headless-rl-wrapper` | Headless RL training and PPO evaluation |
+| Mode B | `flightmare_racing_visualization` | Unity visualization, track tooling, camera capture, and gate logging |
+
+### Current Mode B Features
+
+- YAML track loader
+- Flightmare UnityBridge scene connection
+- Quadrotor and gate spawning
+- World-coordinate track support
+- Local-origin calibrated track support
+- Scene selection for Warehouse, Industrial, Garage, and NatureForest
+- Configurable onboard camera capture
+- RGB/depth/segmentation capture testing
+- Sequential gate-passing logger
+- CSV output for gate-pass events
+- Lap completion detection
+- UZH/RPG-inspired configurable track templates
+
+### Current Mode B Limitations
+
+- Flightmare must be installed separately
+- Unity renderer binaries are not included
+- Examples currently use scripted trajectory playback
+- Learned policy visualization is a future milestone
+- UZH/RPG-inspired tracks are approximate templates, not official reproductions
+
+### Thesis Role
+
+Mode B provides the visualization and racing-track tooling layer needed to inspect, demonstrate, and later evaluate trained policies from Mode A.
+
+The future goal is to connect policies trained in `flightmare-headless-rl-wrapper` to Unity visualization workflows in `flightmare_racing_visualization`.
