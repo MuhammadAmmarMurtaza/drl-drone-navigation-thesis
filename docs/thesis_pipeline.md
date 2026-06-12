@@ -191,3 +191,96 @@ This creates a clean separation:
 Mode B provides the visualization and racing-track tooling layer needed to inspect, demonstrate, and later evaluate trained policies from Mode A.
 
 The future goal is to connect policies trained in `flightmare-headless-rl-wrapper` to Unity visualization workflows in `flightmare_racing_visualization`.
+
+## Foundational RL and PyBullet Drone Baselines
+
+Before advanced Flightmare-based quadrotor training, the thesis pipeline includes a foundational reinforcement learning and early drone-simulation baseline phase.
+
+The dedicated repository is:
+
+`rl-gym-pybullet-drone-baselines`
+
+### Purpose
+
+This repository documents and implements early reinforcement learning experiments using:
+
+- Gymnasium
+- Stable-Baselines3
+- RLlib / Ray
+- PyTorch
+- PyBullet
+- External `gym-pybullet-drones` testing
+
+The purpose is to build algorithm understanding and baseline control experience before moving to more advanced Flightmare-based quadrotor learning.
+
+### Learning Progression
+
+The foundational learning path is:
+
+```text
+CartPole-v1
+↓
+Pendulum-v1
+↓
+MountainCarContinuous-v0
+↓
+Reacher / InvertedPendulum
+↓
+gym-pybullet-drones
+↓
+custom quadcopter Gym environment
+↓
+Flightmare
+↓
+ROS 2 / Gazebo / RealSense / Jetson integration
+```
+
+### Repository Role in Thesis
+
+| Repository | Role |
+|------------|------|
+| `rl-gym-pybullet-drone-baselines` | Foundational reinforcement learning experiments, Gymnasium environments, continuous-control algorithms, and early PyBullet drone testing |
+| `flightmare-headless-rl-wrapper` | Advanced Mode A headless Flightmare reinforcement learning training |
+| `flightmare_racing_visualization` | Mode B Flightmare Unity visualization and racing-track tooling |
+| `drl-drone-navigation-thesis` | Main thesis repository, documentation hub, and progress tracker |
+
+### Algorithms Covered
+
+This repository includes experiments, implementations, and notes for the following reinforcement learning algorithms:
+
+- PPO (Proximal Policy Optimization)
+- SAC (Soft Actor-Critic)
+- TD3 (Twin Delayed Deep Deterministic Policy Gradient)
+- A2C (Advantage Actor-Critic)
+- DQN (Deep Q-Network)
+
+### Algorithm Relevance
+
+PPO is treated as the first stable baseline because of its robustness and simplicity.
+
+SAC is important for continuous-control robotics because it is sample-efficient and uses entropy regularization for exploration.
+
+TD3 is important for deterministic continuous-control tasks and can be useful for precise low-level control.
+
+DQN is included for discrete-control understanding but is not considered suitable for direct continuous drone motor control.
+
+### PyBullet Drone Role
+
+PyBullet drone simulation is treated as a lightweight intermediate step before Flightmare.
+
+It is useful for:
+
+- Visual drone simulation sanity checks
+- Basic hover and control experimentation
+- Early debugging of drone states, actions, and observations
+- Reinforcement learning integration testing
+- Bridging the gap between simple Gymnasium tasks and full quadrotor simulators
+
+### Relationship to Flightmare
+
+This repository is intentionally kept separate from the Flightmare repositories.
+
+It supports the thesis foundation, while the advanced Flightmare work is handled in:
+
+- `flightmare-headless-rl-wrapper`
+- `flightmare_racing_visualization`
