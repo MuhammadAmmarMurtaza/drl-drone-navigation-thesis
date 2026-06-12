@@ -69,8 +69,18 @@ This thesis pipeline is organized into separate repositories to keep training, v
 | Repository | Role |
 |---|---|
 | `drl-drone-navigation-thesis` | Main thesis hub, research pipeline, setup notes, progress tracking |
+| `rl-gym-pybullet-drone-baselines` | Foundational RL, Gymnasium, continuous-control, and early PyBullet drone baseline work |
 | `flightmare-headless-rl-wrapper` | Mode A: headless Flightmare RL training using Gymnasium/SB3/PyTorch |
 | `flightmare_racing_visualization` | Mode B: Flightmare Unity visualization, YAML racing tracks, camera capture and gate-passing logs |
+
+### Foundational RL and PyBullet Baselines
+
+Repository:
+
+`rl-gym-pybullet-drone-baselines`
+
+This repository documents the early learning and baseline-testing phase of the thesis. It includes SB3 and RLlib experiments on Gymnasium environments such as CartPole, Pendulum, and MountainCarContinuous, plus initial PyBullet drone simulation testing.
+
 
 ### Mode A: Headless RL Training
 
