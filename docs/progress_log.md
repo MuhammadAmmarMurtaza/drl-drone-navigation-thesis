@@ -1,6 +1,172 @@
 
 # Progress Log
 
+## Foundational RL and PyBullet Drone Baselines Repository Created
+
+### Repository
+
+`rl-gym-pybullet-drone-baselines`
+
+### Status
+
+`v0.1.0 foundational RL baseline portfolio repo`
+
+### Purpose
+
+This repository documents and implements the foundational reinforcement learning and early drone-simulation baseline phase of the thesis pipeline.
+
+It includes:
+
+- Gymnasium-based RL algorithm testing
+- Stable-Baselines3 experiments
+- RLlib / Ray experiments
+- Discrete-control baselines
+- Continuous-control baselines
+- Early PyBullet drone simulation testing
+- Documentation of algorithm roles for drone-control research
+
+### Relationship to Thesis
+
+This repository represents the foundational learning and baseline-testing phase before advanced Flightmare training, Flightmare Unity visualization, and later ROS 2/Gazebo/hardware integration.
+
+It supports the larger MS thesis direction:
+
+**Deep Reinforcement Learning-Based Autonomous Drone Navigation**
+
+The repository helps build the step-by-step learning path:
+
+```text
+CartPole-v1
+↓
+Pendulum-v1
+↓
+MountainCarContinuous-v0
+↓
+Reacher / InvertedPendulum
+↓
+gym-pybullet-drones
+↓
+custom quadcopter Gym environment
+↓
+Flightmare
+↓
+ROS 2 / Gazebo / RealSense / Jetson integration
+```
+
+### Technical Environment
+
+- WSL2 Ubuntu 22.04
+- Python 3.10 virtual environment
+- Stable-Baselines3 (SB3)
+- RLlib / Ray
+- Ray version: 2.55.1
+- PyTorch
+- Gymnasium
+- PyBullet
+- External `gym-pybullet-drones` tested separately
+
+### Completed Features
+
+- Created clean public GitHub repository under portfolio
+- Added organized source scripts for SB3 and RLlib experiments
+- Added documentation for foundational RL algorithms
+- Added continuous-control learning path
+- Added PyBullet drone simulation notes
+- Added results summaries
+- Added media/GIF previews
+- Added run scripts
+- Added `.gitignore` to avoid virtual environments, trained models, logs, TensorBoard runs, cache files, and large videos
+
+### Included RL Experiments
+
+#### SB3 CartPole-v1
+
+Algorithms:
+
+- PPO
+- A2C
+- DQN
+
+#### RLlib CartPole-v1
+
+Algorithms:
+
+- PPO
+- DQN
+
+#### SB3 Pendulum-v1
+
+Algorithms:
+
+- PPO
+- SAC
+
+#### RLlib Pendulum-v1
+
+Algorithms:
+
+- PPO
+- SAC
+
+#### SB3 MountainCarContinuous-v0
+
+Algorithms:
+
+- SAC
+- TD3
+- PPO optional
+
+### PyBullet Drone Testing
+
+The external `gym-pybullet-drones` project was tested separately.
+
+Observed status:
+
+- `python pid.py` worked successfully
+- PyBullet visual simulation opened with drones and scene objects
+- `python cf.py` was skipped because `CFAviary` requires `pycffirmware`
+- External simulator source code is **not copied** into this repository
+
+### RLlib Notes Documented
+
+Important RLlib 2.55.1 notes were documented:
+
+- New API stack is enabled by default
+- Training worked with `config.build_algo()`
+- `algo.save()` returns a `TrainingResult`
+- Checkpoint path is accessed via `result.checkpoint.path`
+- Legacy `compute_single_action()` failed under the new API stack
+- Testing was fixed using `algo.get_module("default_policy")`
+- CartPole PPO inference uses action-distribution logits with`torch.argmax(...)`
+
+### Algorithm Roles for Drone Research
+
+| Algorithm | Role |
+|------------|------|
+| PPO | Stable on-policy actor-critic baseline; good first choice but sample inefficient |
+| SAC | Strong off-policy continuous-control method with entropy regularization |
+| TD3 | Deterministic off-policy continuous-control method useful for precise control |
+| A2C | Simpler actor-critic baseline |
+| DQN | Useful for discrete actions but not suitable for direct continuous drone motor control |
+
+### Drone-Control Priority
+
+Current priority for drone-control experiments:
+
+1. PPO
+2. SAC
+3. TD3
+
+### Next Tasks
+
+- Review and polish README presentation
+- Add stronger thesis-connection wording
+- Improve screenshots and GIF captions
+- Add `drone_visual_test.py` implementation for scripted hover, move, and land
+- Add PyBullet drone state-inspection script
+- Add more continuous-control benchmarks
+- Keep this repository focused on foundational RL and PyBullet baselines
+
 ## Mode B — Flightmare Unity Racing Visualization Completed
 
 ### Repository
