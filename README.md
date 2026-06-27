@@ -64,57 +64,75 @@ Flightmare is treated as the main thesis simulator. PyBullet is used for fast ba
 
 ## Thesis Repository Ecosystem
 
-This thesis pipeline is organized into separate repositories to keep training, visualization and documentation modular.
+This thesis pipeline is organized into separate repositories to keep foundational learning, Flightmare training, visualization, reusable pipeline code, and final evidence documentation modular.
 
 | Repository | Role |
 |---|---|
-| `drl-drone-navigation-thesis` | Main thesis hub, research pipeline, setup notes, progress tracking |
+| `drl-drone-navigation-thesis` | Main thesis hub, research pipeline, setup notes, and progress tracking |
 | `rl-gym-pybullet-drone-baselines` | Foundational RL, Gymnasium, continuous-control, and early PyBullet drone baseline work |
-| `flightmare-headless-rl-wrapper` | Mode A: headless Flightmare RL training using Gymnasium/SB3/PyTorch |
-| `flightmare_racing_visualization` | Mode B: Flightmare Unity visualization, YAML racing tracks, camera capture and gate-passing logs |
+| `flightmare-headless-rl-wrapper` | Flightmare headless RL wrapper and PPO training/evaluation tools |
+| `flightmare_racing_visualization` | Flightmare UnityBridge visualization, YAML racing tracks, camera capture, and gate-passing logs |
+| `flightmare-vision-aware-drl-pipeline` | Reusable implementation pipeline for vision-aware Flightmare gate-navigation experiments |
+| `flightmare-vision-aware-drl-results` | Curated thesis-ready results, plots, tables, GIFs, videos, screenshots, and visual validation evidence |
 
-### Foundational RL and PyBullet Baselines
+## Research Progression
 
-Repository:
+```text
+Foundational Gymnasium / PyBullet RL baselines
+↓
+Flightmare headless RL wrapper
+↓
+Flightmare UnityBridge visualization and racing-track tooling
+↓
+Vision-aware Flightmare DRL pipeline
+↓
+Curated thesis results and visual evidence archive
+```
 
-`rl-gym-pybullet-drone-baselines`
+## Vision-Aware Flightmare DRL Pipeline and Results
 
-This repository documents the early learning and baseline-testing phase of the thesis. It includes SB3 and RLlib experiments on Gymnasium environments such as CartPole, Pendulum, and MountainCarContinuous, plus initial PyBullet drone simulation testing.
+The latest Flightmare thesis work is split into two complementary repositories.
 
+### Implementation Repository
 
-### Mode A: Headless RL Training
+`flightmare-vision-aware-drl-pipeline`
 
-Mode A focuses on fast reinforcement learning training without Unity rendering.
+This repository contains the reusable implementation pipeline for:
 
-Repository:
+- Privileged-state teacher PPO training
+- Teacher rollout dataset generation
+- Compact gate/vision-feature observation design
+- 25D vision-proprioceptive student observation design
+- Imitation learning
+- PPO-from-scratch baselines
+- IL-initialized PPO fine-tuning
+- Robustness evaluation
+- UnityBridge replay export
 
-`flightmare-headless-rl-wrapper`
+### Results and Evidence Repository
 
-Main features:
+`flightmare-vision-aware-drl-results`
 
-- Flightmare buffer-based wrapper
-- Gymnasium-compatible single environment
-- SB3-compatible VecEnv wrapper
-- Scaled-action wrapper
-- PPO headless training and evaluation
-- Action-scale ablation
+This repository contains curated thesis-ready evidence:
 
-### Mode B: Unity Racing Visualization
+- Phase-wise reports
+- Policy comparison tables
+- Failure-mode summaries
+- Observation-space comparisons
+- Phase 5 imitation-learning diagnostics
+- Phase 8 robustness plots
+- Phase 9 UnityBridge replay GIFs and MP4s
+- Onboard RGB evidence
+- Feature-to-camera consistency evidence
 
-Mode B focuses on Flightmare UnityBridge visualization and racing-track tooling.
+### Important Interpretation
 
-Repository:
+The current vision-aware DRL result demonstrates replay-based visual validation of a compact 25D vision-proprioceptive imitation-learning policy in Flightmare UnityBridge.
 
-`flightmare_racing_visualization`
+It should not be interpreted as:
 
-Main features:
+- raw RGB end-to-end control,
+- real-world drone deployment,
+- fully validated sim-to-real transfer.
 
-- YAML-driven racing tracks
-- Scene selection
-- Local-origin scene calibration
-- Onboard camera capture
-- Gate-passing detection
-- CSV logging
-- UZH/RPG-inspired configurable track templates
-
-Mode A and Mode B are intentionally separated. Mode A is used for training and evaluation, while Mode B is used for visualization, track tooling and future trained-policy demonstrations.
+It is a thesis-level simulation pipeline toward vision-aware autonomous drone navigation using DRL.
