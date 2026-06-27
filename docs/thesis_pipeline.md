@@ -284,3 +284,72 @@ It supports the thesis foundation, while the advanced Flightmare work is handled
 
 - `flightmare-headless-rl-wrapper`
 - `flightmare_racing_visualization`
+
+---
+
+## Flightmare Vision-Aware DRL Gate-Navigation Pipeline
+
+The latest focused technical direction is:
+
+**From Privileged State to Vision Features: A Practical Flightmare Pipeline for DRL-Based Drone Gate Navigation**
+
+This work is organized into two repositories:
+
+| Repository | Purpose |
+|---|---|
+| `flightmare-vision-aware-drl-pipeline` | Reusable implementation pipeline |
+| `flightmare-vision-aware-drl-results` | Curated results and visual evidence archive |
+
+### Pipeline Repository
+
+`flightmare-vision-aware-drl-pipeline`
+
+This repository contains reusable source code, configs, scripts, and documentation for:
+
+- Privileged-state teacher policy training
+- Teacher rollout dataset generation
+- 12D gate-feature student learning
+- 25D vision-proprioceptive student learning
+- PPO-from-scratch baselines
+- IL-initialized PPO fine-tuning
+- Robustness evaluation
+- UnityBridge replay export
+
+### Results Repository
+
+`flightmare-vision-aware-drl-results`
+
+This repository contains selected thesis-ready results and evidence:
+
+- Phase-wise reports
+- Policy comparison tables
+- Failure-mode summaries
+- Observation-space summaries
+- Training/evaluation figures
+- UnityBridge replay GIFs and videos
+- Onboard RGB evidence
+- Feature-to-camera consistency evidence
+
+### Main Experimental Conclusion
+
+The 25D vision-proprioceptive imitation-learning student was the strongest practical student policy.
+
+It was trained using teacher-guided imitation learning and uses a compact observation space combining gate/vision-like features with proprioceptive feedback.
+
+### Key Interpretation
+
+The pipeline shows that moving from privileged state to compact vision-proprioceptive features is a practical intermediate direction for Flightmare-based drone gate navigation.
+
+The current validation is simulation-based and replay-based through UnityBridge. It is not raw RGB end-to-end real-drone deployment.
+
+### Future Research Direction
+
+Future work can extend the reusable pipeline toward:
+
+- Figure-8 tracks
+- Split-S tracks
+- Kidney tracks
+- Multi-lap racing layouts
+- More robust policy evaluation
+- Better sim-to-real preparation
+- ROS 2/Gazebo and hardware-oriented deployment stages
