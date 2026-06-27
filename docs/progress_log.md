@@ -1,6 +1,129 @@
 
 # Progress Log
 
+## Flightmare Vision-Aware DRL Pipeline and Results Repositories Completed
+
+### Research Direction
+
+**From Privileged State to Vision Features: A Practical Flightmare Pipeline for DRL-Based Drone Gate Navigation**
+
+### Completed Repositories
+
+#### `flightmare-vision-aware-drl-pipeline`
+
+Reusable implementation repository for the Flightmare vision-aware DRL drone gate-navigation pipeline.
+
+This repository includes:
+
+- Track loading
+- Gate geometry
+- Gate-pass logic
+- State observations
+- Vision-feature observations
+- Vision-proprioceptive observations
+- Reward logic
+- Termination logic
+- Environment metrics
+- Flightmare state adaptation
+- Teacher environment wrapper
+- Vision-feature student environment
+- Vision-proprioceptive student environment
+- Teacher training scripts
+- Student imitation-learning scripts
+- PPO-from-scratch scripts
+- IL-initialized PPO fine-tuning scripts
+- Evaluation scripts
+- Robustness testing scripts
+- UnityBridge replay trajectory export
+
+#### `flightmare-vision-aware-drl-results`
+
+Curated thesis-ready results and visual evidence archive.
+
+This repository includes:
+
+- Phase-wise written reports
+- Result summaries
+- Evaluation tables
+- Plots and figures
+- UnityBridge replay GIFs
+- UnityBridge compressed replay videos
+- Onboard RGB evidence
+- Camera-feature consistency evidence
+- Robustness results
+- Visual validation reports
+
+### Results Repository Highlights
+
+The results archive includes:
+
+- 63 phase figures
+- 3 Phase 9 replay GIFs
+- 3 compressed MP4 UnityBridge replay videos
+- 4 CSV result tables
+- 18 Markdown documentation files
+- Onboard RGB camera frames
+- UnityBridge screenshots
+- Annotated feature-camera consistency images
+- Phase 5 imitation-learning diagnostics
+- Phase 8 robustness plots
+- Phase 9 visual validation reports
+
+### Main Phase 9 Replay Results
+
+| Policy | Description | Gates Passed | Lap Complete | Crashed | Reward |
+|---|---|---:|---|---|---:|
+| P3 | 25D vision-proprioceptive IL student | 3 | true | false | 154.03 |
+| P1 | Privileged PPO teacher reference | 3 | true | false | 152.43 |
+| P2 | Selected PPO-from-scratch success | 3 | true | false | 111.53 |
+
+Important note:
+
+The P2 PPO-from-scratch replay is a selected successful replay, not representative of nominal reliability.
+
+### Primary Thesis Result
+
+The primary selected practical student is:
+
+`P3 — 25D vision-proprioceptive imitation-learning student`
+
+This policy combines compact gate/vision-like features with onboard proprioceptive feedback:
+
+- Attitude
+- Velocity
+- Angular velocity
+- Previous action
+
+It completed the T02 three-gate Flightmare replay in UnityBridge visual validation.
+
+### Boundary
+
+This result is replay-based visual validation of a compact vision-proprioceptive policy.
+
+It is not:
+
+- raw RGB end-to-end real-drone control,
+- real-world deployment,
+- full sim-to-real validation.
+
+### Relationship to Existing Portfolio
+
+| Repository | Role |
+|---|---|
+| `rl-gym-pybullet-drone-baselines` | Foundational RL and PyBullet baseline phase |
+| `flightmare-headless-rl-wrapper` | Flightmare headless RL wrapper and PPO training/evaluation |
+| `flightmare_racing_visualization` | Flightmare UnityBridge visualization and racing tooling |
+| `flightmare-vision-aware-drl-pipeline` | Reusable implementation pipeline |
+| `flightmare-vision-aware-drl-results` | Curated thesis evidence and visual validation archive |
+
+### Next Tasks
+
+- Add final portfolio pins/order on GitHub
+- Add GitHub topics to both vision-aware repos
+- Optionally create release tags
+- Continue polishing thesis/GEC-ready documentation
+- Plan future extension to harder tracks such as Figure-8, Split-S, Kidney, and multi-lap layouts
+
 ## Foundational RL and PyBullet Drone Baselines Repository Created
 
 ### Repository
